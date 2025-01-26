@@ -1,0 +1,13 @@
+[book]
+authors = ["Uwa Christian"]
+description = "Esp tutorial based on Freenove"
+language = "en"
+multilingual = false
+src = "src"
+title = "Esp tutorial based on Freenove"
+
+[rust]
+edition = "2021"
+
+[output.html]
+git-repository-url = "https://github.com/makuo12"
