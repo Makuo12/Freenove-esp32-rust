@@ -13,7 +13,7 @@ I will also be using visual studio code.
 Generate a template project
 
 ```shell
-esp-generate --chip esp32 led 
+esp-generate --chip esp32 blinky
 ```
 
 Select the config option you feel you might need, but for now all we need is the Optional editor config files for rust-analyzer.
