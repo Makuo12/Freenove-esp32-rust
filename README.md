@@ -34,4 +34,5 @@ All tutorials are located in the `src` folder. Navigate to this folder to find t
 
 All codes for tutorials are located in the `code` folder. Navigate to this folder to find the individual tutorial directories and start learning!
 
-[Next]([Intro](https://github.com/Makuo12/Freenove-esp32-rust/blob/main/src/01_intro.md))
+
+[Next]([Intro](https://github.com/Makuo12/Freenove-esp32-rust/blob/main/src/01_intro.md)
