@@ -8,11 +8,7 @@ The Freenove Ultimate Kit is a comprehensive kit for learning electronics and pr
 
 ## Getting Started
 
-To get started with these tutorials, you will need:
-
-- The Freenove Ultimate Kit
-- A computer with Rust installed
-- Basic knowledge of Rust programming
+To get started with these tutorials click here[/src]
 
 ## Tutorials
 
