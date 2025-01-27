@@ -44,3 +44,5 @@ esp-generate --chip=esp32c6 your-project
 ```
 
 To learn more about esp-generate checkout Generating Projects from Templates [The Rust on ESP Book](https://docs.esp-rs.org/book/writing-your-own-application/generate-project/index.html)
+
+### [Next](https://github.com/Makuo12/Freenove-esp32-rust/blob/main/src/03_Project_1.1_Blink.md)

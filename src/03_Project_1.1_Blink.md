@@ -1,7 +1,6 @@
-# Chapter 1 LED (Important)
+# Project 1.1 Blink (Important)
 
-This chapter is the Start Point in the journey to build and explore ESP32 WROOM electronic projects. We
-will start with simple “Blink” project.
+We will start with simple “Blink” project.
 
 ## Requirements
 
@@ -92,3 +91,5 @@ loop {
 ```
 
 This makes it possible to create a bink effect as we would toggle various state (off and on) the delay ensures that we get to see the led as it is blinking.
+
+### [Next](https://github.com/Makuo12/Freenove-esp32-rust/blob/main/src/04_Project_1.2_Blink.md)
