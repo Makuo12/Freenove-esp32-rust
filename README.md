@@ -8,7 +8,7 @@ The Freenove Ultimate Kit is a comprehensive kit for learning electronics and pr
 
 ## Getting Started
 
-To get started with these tutorials click here[/src]
+To get started with these tutorials [Intro](https://github.com/Makuo12/Freenove-esp32-rust/blob/main/src/01_intro.md)
 
 ## Tutorials
 
@@ -33,3 +33,5 @@ All tutorials are located in the `src` folder. Navigate to this folder to find t
 ## code Folder
 
 All codes for tutorials are located in the `code` folder. Navigate to this folder to find the individual tutorial directories and start learning!
+
+[Next]([Intro](https://github.com/Makuo12/Freenove-esp32-rust/blob/main/src/01_intro.md))
