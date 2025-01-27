@@ -7,6 +7,15 @@ use esp_hal::prelude::*;
 use log::info;
 
 #[entry]
+#![no_std]
+#![no_main]
+
+use esp_backtrace as _;
+use esp_hal::delay::Delay;
+use esp_hal::prelude::*;
+use log::info;
+
+#[entry]
 fn main() -> ! {
     let peripherals = esp_hal::init(esp_hal::Config::default());
 
@@ -15,7 +24,9 @@ fn main() -> ! {
 
     let delay = Delay::new();
     loop {
-        led2.toggle();
-        delay.delay_millis(50);
+        led2.set_high();
+        delay.delay_millis(100);
+        led2.set_low();
+        delay.delay_millis(100);
     }
 }
