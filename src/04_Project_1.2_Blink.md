@@ -1,6 +1,6 @@
 # Project 1.2 Blink
 
-This project would consist of a Esp32, a breadboard, one LED, a resistor, and two jumper wires. Remember that you can always find more information about this project in the Python or C instructional materials in the material folder on github to gain a better idea of how to arrange the various components.
+This project would consist of a Esp32, a breadboard, one LED, a resistor, and two jumper wires. Remember that you can always find more information about this project in the Python or C instructional materials in the [material folder on github](https://github.com/Makuo12/Freenove-esp32-rust/tree/main/materials) to gain a better idea of how to arrange the various components.
 
 ## Requirements
 
@@ -47,7 +47,7 @@ use esp_hal::{
 We would need to define our own entry point because we don't have the main function
 
 ```rust
-# [entry]
+#[entry]
 fn main() -> ! {
     let peripherals = esp_hal::init(esp_hal::Config::default());
 

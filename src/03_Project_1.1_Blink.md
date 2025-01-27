@@ -47,7 +47,7 @@ use esp_hal::{
 We would need to define our own entry point because we don't have the main function
 
 ```rust
-# [entry]
+#[entry]
 fn main() -> ! {
     let peripherals = esp_hal::init(esp_hal::Config::default());
 
