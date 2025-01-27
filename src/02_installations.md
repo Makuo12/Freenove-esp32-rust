@@ -2,8 +2,8 @@
 
 ## RISC-V and Xtensa Targets
 
-The esp32 ism mostly based up of 2 chip architectures RISC-V and Xtensa. The RISC-V are usually single chip architectures while the Xtensa is dual core.
-When setuping up a working environment with my esp32 in rust I usually just like using the espup tool kit as it simplifies installing and maintaining the components required to develop Rust applications for the Xtensa and RISC-V architectures.
+The esp32 is primarily made up of two chip architectures: RISC-V and Xtensa. RISC-V is typically a single-chip architecture, whereas the Xtensa is dual-core.
+When setting up a working environment with my esp32 in rust, I normally just use the espup tool kit because it makes it easier to install and maintain the components needed to develop Rust applications for the Xtensa and RISC-V architecture.
 
 ### 1. Install `espup`
 
@@ -45,4 +45,4 @@ esp-generate --chip=esp32c6 your-project
 
 To learn more about esp-generate checkout Generating Projects from Templates [The Rust on ESP Book](https://docs.esp-rs.org/book/writing-your-own-application/generate-project/index.html)
 
-### [Next](https://github.com/Makuo12/Freenove-esp32-rust/blob/main/src/03_Project_1.1_Blink.md)
+### [Next](03_Project_1.1_Blink.md)

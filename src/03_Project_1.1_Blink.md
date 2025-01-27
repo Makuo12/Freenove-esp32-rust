@@ -92,4 +92,4 @@ loop {
 
 This makes it possible to create a bink effect as we would toggle various state (off and on) the delay ensures that we get to see the led as it is blinking.
 
-### [Next](https://github.com/Makuo12/Freenove-esp32-rust/blob/main/src/04_Project_1.2_Blink.md)
+### [Next](04_Project_1.2_Blink.md)
