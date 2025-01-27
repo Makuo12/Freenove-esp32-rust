@@ -1,18 +1,18 @@
-## Freenove Ultimate Kit Tutorials in Rust
+# Freenove Esp Tutorials in Rust
 
-Hey there, fellow coding enthusiasts! Welcome to the Freenove Ultimate Kit Tutorials in Rust! This project is a treasure trove of tutorials that show you how to use the Freenove Ultimate Kit with the awesome Rust programming language.
+Hey there, fellow coding enthusiasts! Welcome to the Freenove Esp Tutorial in Rust! This project contains a series of tutorials that demonstrate how to use the Freenove Ultimate Kit with the Rust programming language.
 
 ## About
 
-The Freenove Ultimate Kit is like a Swiss Army Knife for learning electronics and programming. This project is all about bringing Rust implementations of the tutorials in the kit to life. So, you can dive into Rust while working on some seriously cool hardware projects.
+This project intends to provide Rust versions of the Freenove lessons, which are typically written in C or MicroPython, allowing you to experiment and learn Rust while working on intriguing hardware projects.
 
 ## Getting Started
 
-Ready to dive in? Let’s start with the [Intro](https://github.com/Makuo12/Freenove-esp32-rust/blob/main/src/01_intro.md).
+Ready to dive in? Let’s start with the [Intro](01_intro.md).
 
 ## Tutorials
 
-Each tutorial is hidden in the src folder. Inside the folder, you’ll find all the tutorials. The code for each tutorial is in the code folder.
+You can find the code to the tutorials [here](https://github.com/Makuo12/Freenove-esp32-rust/tree/main/code). Please note that more tutorials will be coming in on a daily basis.
 
 ## Contributing
 
