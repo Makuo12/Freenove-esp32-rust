@@ -100,4 +100,3 @@ What happens
 LED turns on for 100 milliseconds.
 LED turns off for 100 milliseconds.
 This creates a blinking effect with a frequency of 5 Hz (a blink every 200 ms, which is 5 blinks per second).
-
