@@ -11,9 +11,7 @@ use log::info;
 #![no_main]
 
 use esp_backtrace as _;
-use esp_hal::delay::Delay;
-use esp_hal::prelude::*;
-use log::info;
+use esp_hal::{delay::Delay, gpio::{Input, Level, Output, Pull}, prelude::*};
 
 #[entry]
 fn main() -> ! {
