@@ -3,9 +3,10 @@
 
 use esp_backtrace as _;
 use esp_hal::{
-    delay::Delay, gpio::{Input, Level, Output, OutputOpenDrain, Pull}, prelude::*, rtc_cntl::Rtc};
+    delay::Delay, gpio::{Input, Level, Output, OutputOpenDrain, Pull}, prelude::*, rtc_cntl::Rtc,
+    ledc::{channel::{self, Channel}, timer::{self, Timer as LCD_Timer}, LSGlobalClkSource, Ledc, LowSpeed};
+};
 use esp_println::println;
-use ledc::{channel::{self, Channel}, timer::{self, Timer as LCD_Timer}, LSGlobalClkSource, Ledc, LowSpeed};
 
 
 
