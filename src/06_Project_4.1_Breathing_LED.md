@@ -27,7 +27,7 @@ duty cycle = PW / (cycle time) * 100
 When the duty cycle is at 50% then the waveform becomes a square wave.
 
 ```rust
-    let mut pin2_channel1 = board.ledc.channel(channel::Number::Channel1, peripherals.GPIO2);
+    let mut pin2_channel1 = ledc.channel(channel::Number::Channel1, peripherals.GPIO2);
     pin2_channel1
         .configure(channel::config::Config {
             timer: &lstimer0,
@@ -49,16 +49,13 @@ channel to output PWM.
 #![no_main]
 
 use esp_backtrace as _;
-use esp_hal::{
-    delay::Delay, gpio::{Input, Level, Output, OutputOpenDrain, Pull}, prelude::*, rtc_cntl::Rtc};
-use esp_println::println;
-use ledc::{channel::{self, Channel}, timer::{self, Timer as LCD_Timer}, LSGlobalClkSource, Ledc, LowSpeed};
+use esp_hal::{ledc::{channel::{self, ChannelIFace}, timer::{self, TimerIFace}, Ledc, LowSpeed}, time::RateExtU32};
+use esp_hal::main;
 
-#[entry]
+#[main]
 fn main() -> ! {
     let peripherals = esp_hal::init(esp_hal::Config::default());
-    // Here we set our timer
-    // Remember this timers help us count
+    let ledc = Ledc::new(peripherals.LEDC);
     let mut lstimer0 = ledc.timer::<LowSpeed>(timer::Number::Timer0);
     lstimer0
     .configure(timer::config::Config {
@@ -67,7 +64,7 @@ fn main() -> ! {
         frequency: 50_u32.Hz(),
     })
     .unwrap();
-    let mut pin2_channel1 = board.ledc.channel(channel::Number::Channel1, peripherals.GPIO2);
+    let mut pin2_channel1 = ledc.channel(channel::Number::Channel1, peripherals.GPIO2);
     pin2_channel1
         .configure(channel::config::Config {
             timer: &lstimer0,
@@ -77,13 +74,15 @@ fn main() -> ! {
         .unwrap();
     loop {
         for i in 0..255 {
-            pin2_channel1.set_duty(i);
+            let _ = pin2_channel1.set_duty(i);
         }
     }
+
 }
 ```
 
 ```rust
+    let ledc = Ledc::new(peripherals.LEDC);
     let mut lstimer0 = ledc.timer::<LowSpeed>(timer::Number::Timer0);
     lstimer0
     .configure(timer::config::Config {
@@ -91,6 +90,7 @@ fn main() -> ! {
         clock_source: timer::LSClockSource::APBClk,
         frequency: 50_u32.Hz(),
     })
+    .unwrap();
 ```
 
 Counting helps us keep track of our resolution. Resolutions helps to know that are the possible values for our duty cycle percentage.
@@ -100,3 +100,5 @@ Imagine we are counting from 1 to 8. Let say that at the start the duty cycle is
 To fix this we would want to create our count to be longer maybe we can make the resolution 32. Note that the drawback of increasing resolution is that it takes longer to complete a cycle.
 
 The Frequency is how many times the cycle repeats per second.
+
+### [Next: Random Color Light](07_Project_5.1_Random_Color_Light.md)

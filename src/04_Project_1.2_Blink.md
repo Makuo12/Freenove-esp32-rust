@@ -34,12 +34,10 @@ The #![no_main] attribute in Rust is used to tell the compiler that your program
 ### The libaries we would use
 
 ```rust
-use esp_backtrace as_;
-use esp_hal::{
-    delay::Delay,
-    gpio::{Input, Level, Output, Pin, Pull},
-    prelude::*,
-};
+use esp_backtrace as _;
+use esp_hal::delay::Delay;
+use esp_hal::main;
+use esp_hal::gpio::{Level, Output};
 ```
 
 #### Entry point
@@ -47,12 +45,12 @@ use esp_hal::{
 We would need to define our own entry point because we don't have the main function
 
 ```rust
-#[entry]
+#[main]
 fn main() -> ! {
     let peripherals = esp_hal::init(esp_hal::Config::default());
 
     // Set LED GPIOs as an output:
-    let mut led2 = Output::new(peripherals.GPIO2.degrade(), Level::Low);
+    let mut led2 = Output::new(peripherals.GPIO2, Level::Low);
 
     let delay = Delay::new();
     loop {
@@ -74,7 +72,7 @@ esp_hal::init() initializes the hardware abstraction layer (HAL) for the ESP mic
 esp_hal::Config::default() provides the default configuration for initializing the HAL.
 
 ```rust
-let mut led2 = Output::new(peripherals.GPIO2.degrade(), Level::Low)
+    let mut led2 = Output::new(peripherals.GPIO2, Level::Low);
 ```
 
 we set the led as Output becuase we would be using the GPIO pin to send digital output signal to the LED
@@ -100,3 +98,5 @@ What happens
 LED turns on for 100 milliseconds.
 LED turns off for 100 milliseconds.
 This creates a blinking effect with a frequency of 5 Hz (a blink every 200 ms, which is 5 blinks per second).
+
+### [Next: Button & LED](05_Project_2.1_Button_&_LED.md)

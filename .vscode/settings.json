@@ -1,0 +1,19 @@
+{
+    // "rust-analyzer.cargo.allTargets": false,
+    // "rust-analyzer.cargo.target": "xtensa-esp32-none-elf",
+    // "rust-analyzer.server.extraEnv": {
+    //     "RUSTUP_TOOLCHAIN": "stable"
+    // },
+    // "rust-analyzer.check.extraEnv": {
+    //     "RUSTUP_TOOLCHAIN": "esp"
+    // },
+    // "rust-analyzer.cargo.extraEnv": {
+    //     "RUSTUP_TOOLCHAIN": "esp"
+    // },
+    "rust-analyzer.linkedProjects": [
+        "code/blinky/Cargo.toml",
+        "code/blinky_two/Cargo.toml",
+        "code/breathing_led/Cargo.toml",
+        "code/button_and_led/Cargo.toml",
+    ]
+}

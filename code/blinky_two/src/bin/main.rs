@@ -3,22 +3,15 @@
 
 use esp_backtrace as _;
 use esp_hal::delay::Delay;
-use esp_hal::prelude::*;
-use log::info;
+use esp_hal::main;
+use esp_hal::gpio::{Level, Output};
 
-#[entry]
-#![no_std]
-#![no_main]
-
-use esp_backtrace as _;
-use esp_hal::{delay::Delay, gpio::{Input, Level, Output, Pull}, prelude::*};
-
-#[entry]
+#[main]
 fn main() -> ! {
     let peripherals = esp_hal::init(esp_hal::Config::default());
 
     // Set LED GPIOs as an output:
-    let mut led2 = Output::new(peripherals.GPIO2.degrade(), Level::Low);
+    let mut led2 = Output::new(peripherals.GPIO2, Level::Low);
 
     let delay = Delay::new();
     loop {

@@ -26,4 +26,4 @@ To ensure that you have all the items you will need, you can order a comprehensi
 - Basic Rust like [The Rust Book](https://doc.rust-lang.org/book/) Chapters 1 - 6, Chapter 4 Ownership, does not need to be fully understood.
 - [The Rust on ESP Book](https://esp-rs.github.io/book/) is not required, but it is highly recommended, as it can help you understand the Rust on ESP ecosystem and many of the concepts that will be discussed during the training.
 
-### [Next](02_installations.md)
+### [Next: Installation](02_installations.md)

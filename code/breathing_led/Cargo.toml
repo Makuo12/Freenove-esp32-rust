@@ -3,9 +3,6 @@ edition = "2021"
 name    = "breathing_led"
 version = "0.1.0"
 
-[[bin]]
-name = "breathing_led"
-path = "./src/bin/main.rs"
 
 [dependencies]
 critical-section = "1.2.0"
@@ -32,3 +29,19 @@ incremental      = false
 lto              = 'fat'
 opt-level        = 's'
 overflow-checks  = false
+
+
+[[bin]]
+name = "breathing_led"
+path = "src/bin/main.rs"
+harness = false
+test = false
+doctest = false
+bench = false
+
+[lib]
+path = "src/lib.rs"
+test=false
+harness = false
+doctest = false
+bench = false

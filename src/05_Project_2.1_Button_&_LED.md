@@ -36,9 +36,8 @@ The #![no_main] attribute in Rust is used to tell the compiler that your program
 
 ```rust
 use esp_backtrace as _;
-use esp_hal::delay::Delay, gpio::{Input, Level, Output, Pull};
+use esp_hal::gpio::{Input, Level, Output, Pull};
 use esp_hal::main;
-use log::info;
 ```
 
 #### Entry point
@@ -51,9 +50,8 @@ fn main() -> ! {
     let peripherals = esp_hal::init(esp_hal::Config::default());
 
     // Set LED GPIOs as an output:
-    let mut led = Output::new(peripherals.GPIO2.degrade(), Level::Low);
-    let mut button = Input::new(peripherals.GPIO4.degrade(), Pull::Up);
-    let delay = Delay::new();
+    let mut led = Output::new(peripherals.GPIO2, Level::Low);
+    let button = Input::new(peripherals.GPIO4, Pull::Up);
     loop {
         if button.is_low() {
             led.set_high();
@@ -74,13 +72,13 @@ esp_hal::init() initializes the hardware abstraction layer (HAL) for the ESP mic
 esp_hal::Config::default() provides the default configuration for initializing the HAL.
 
 ```rust
-    let mut led = Output::new(peripherals.GPIO2.degrade(), Level::Low);
+    let mut led = Output::new(peripherals.GPIO2, Level::Low);
 ```
 
 we set the led as Output becuase we would be using the GPIO pin to send digital output signal to the LED
 
 ```rust
-    let mut button = Input::new(peripherals.GPIO4.degrade(), Pull::Up);
+    let button = Input::new(peripherals.GPIO4, Pull::Up);
 ```
 
 we set the GPIO4 as an Input because we want to know when a button is pressed. When the button is pressed down the signal in the state changes to low.
@@ -96,3 +94,5 @@ we set the GPIO4 as an Input because we want to know when a button is pressed. W
 ```
 
 Here when the button is pressed down we get an input signal which sets the GPIO to low and when it is low we set the led to high.
+
+### [Next: Breathing LED](06_Project_4.1_Breathing_LED.md)

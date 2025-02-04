@@ -31,3 +31,19 @@ incremental = false
 lto = 'fat'
 opt-level = 's'
 overflow-checks = false
+
+
+[[bin]]
+name = "blinky"
+path = "src/bin/main.rs"
+harness = false
+test = false
+doctest = false
+bench = false
+
+[lib]
+path = "src/lib.rs"
+test=false
+harness = false
+doctest = false
+bench = false

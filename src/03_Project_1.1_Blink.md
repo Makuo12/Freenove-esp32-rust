@@ -34,12 +34,10 @@ The #![no_main] attribute in Rust is used to tell the compiler that your program
 ### The libaries we would use
 
 ```rust
-use esp_backtrace as_;
-use esp_hal::{
-    delay::Delay,
-    gpio::{Input, Level, Output, Pin, Pull},
-    prelude::*,
-};
+use esp_backtrace as _;
+use esp_hal::delay::Delay;
+use esp_hal::main;
+use esp_hal::gpio::{Level, Output};
 ```
 
 #### Entry point
@@ -47,12 +45,12 @@ use esp_hal::{
 We would need to define our own entry point because we don't have the main function
 
 ```rust
-#[entry]
+#[main]
 fn main() -> ! {
     let peripherals = esp_hal::init(esp_hal::Config::default());
 
     // Set LED GPIOs as an output:
-    let mut led2 = Output::new(peripherals.GPIO2.degrade(), Level::Low);
+    let mut led2 = Output::new(peripherals.GPIO2, Level::Low);
 
     let delay = Delay::new();
     loop {
@@ -65,18 +63,20 @@ fn main() -> ! {
 ### Explanation
 
 ```rust
-let peripherals = esp_hal::init(esp_hal::Config::default());
+    let peripherals = esp_hal::init(esp_hal::Config::default());
 ```
 
 esp_hal::init() initializes the hardware abstraction layer (HAL) for the ESP microcontroller.
 esp_hal::Config::default() provides the default configuration for initializing the HAL.
 
 ```rust
-let mut led2 = Output::new(peripherals.GPIO2.degrade(), Level::Low)
+    let mut led2 = Output::new(peripherals.GPIO2, Level::Low);
 ```
 
 we set the led as Output becuase we would be using the GPIO pin to send digital output signal to the LED
 I used GPIO2 because that is what is connected to the LED on the esp32 development board.
+
+Note: it is also possible to see peripherals.GPIO2.degrade() in some applications. This was used to just put the pin as anypin so it can be used easily but with the latest esp release there is no need. It is not even the library anymore.
 
 `Output::new()` creates an output pin for GPIO2, which will control an LED.
 `peripherals.GPIO2`: Refers to GPIO pin 2 of the ESP microcontroller.
@@ -92,4 +92,4 @@ loop {
 
 This makes it possible to create a bink effect as we would toggle various state (off and on) the delay ensures that we get to see the led as it is blinking.
 
-### [Next](04_Project_1.2_Blink.md)
+### [Next: Blink 2](04_Project_1.2_Blink.md)
