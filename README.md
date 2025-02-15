@@ -8,7 +8,7 @@ We're transforming the traditional C and MicroPython-based Freenove lessons into
 
 ## Getting Started
 
-Ready to embark on your Rust embedded journey? Jump right in with our [Introduction](01_intro.md)!
+Ready to embark on your Rust embedded journey? Jump right in with our [Introduction](https://makuo12.github.io/Freenove-esp32-rust/)!
 
 ## Project Structure
 
@@ -35,4 +35,4 @@ This project is freely available under the MIT License. See [LICENSE](LICENCE-MI
 
 Let's build something amazing together! 🚀
 
-### [Begin Your Journey →](src/01_intro.md)
+### [Begin Your Journey →](https://makuo12.github.io/Freenove-esp32-rust/)
