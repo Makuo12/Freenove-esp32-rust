@@ -61,6 +61,7 @@ fn main() -> ! {
         esp_println::println!("esp32: {}", from_utf8(&bytes).unwrap())
     }
 }
+```
 
 ```rust
     uart1.write_bytes(b"Rust is calm for embedded development").unwrap();
