@@ -17,12 +17,17 @@ colors through different combinations.
 
 We will be using some of the same objects that we used in [Project 6](06_Project_4.1_Breathing_LED.md)
 
+## Code
+
 ```rust
 #![no_std]
 #![no_main]
 
 use esp_backtrace as _;
-use esp_hal::{delay::Delay, gpio::{Level, Output}, ledc::{channel::{self, ChannelHW, ChannelIFace}, timer::{self, TimerIFace}, Ledc, LowSpeed}, rng::Trng, time::RateExtU32};
+use esp_hal::{delay::Delay, gpio::{Level, Output}, 
+ledc::{channel::{self, ChannelHW, ChannelIFace}, 
+timer::{self, TimerIFace}, Ledc, LowSpeed}, 
+rng::Trng, time::RateExtU32};
 use esp_hal::main;
 
 #[main]
@@ -104,4 +109,6 @@ Here we configure to channel to use using the LEDC provided from the esp_hal cra
         delay.delay_micros(1000);
 ```
 
-Here we set the duty. hw means hardware using this we can set values higher than u8 up to u32.
+Here we set the duty. hw means hardware, using this we can set values higher than u8 up to u32.
+
+### [Next: Doorbell](08_Project_7.1_Doorbell.md)

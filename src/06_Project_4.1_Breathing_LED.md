@@ -5,8 +5,7 @@ So, how to control the brightness of a LED? We will use PWM to achieve this targ
 
 ## PWM (Pulse Width Modulation)
 
-This is a rectangular wave form. For each cycle we have an on state and an off state. By combining this two states we can produce an analog signal (artificial analog signal). 
-When the circuit is in an on state we can call it Pulse width and when it is in an off state we can call it space width.
+This is a rectangular wave form. For each cycle we have an on state and an off state. By combining this two states we can produce an analog signal (artificial analog signal). When the circuit is in an on state we can call it Pulse width and when it is in an off state we can call it space width.
 t1 -> would represent the time period for Pulse width (PW)
 t2 -> would represent the time period for space width (SW)
 
@@ -95,7 +94,7 @@ fn main() -> ! {
 
 Counting helps us keep track of our resolution. Resolutions helps to know that are the possible values for our duty cycle percentage.
 
-Imagine we are counting from 1 to 8. Let say that at the start the duty cycle is 100% this means from 1 to 8 the states is always on. Now lets say we want 50% duty cycle we see that maybe from 1 to 4 the circuit is on while 5 to 8 it remains off. However, you will also notice that from 1 to 8 there is only a few number of duty cycles percentages we can use (100%, 87.5%, 75%, 62.5%, 50%, 37.5%, 25%, 12.5%, and 0%). So if we want a duty cycle of 92% it would not be possible using this resolution. 
+Imagine we are counting from 1 to 8. Let say that at the start the duty cycle is 100% this means from 1 to 8 the states is always on. Now lets say we want 50% duty cycle we see that maybe from 1 to 4 the circuit is on while 5 to 8 it remains off. However, you will also notice that from 1 to 8 there is only a few number of duty cycles percentages we can use (100%, 87.5%, 75%, 62.5%, 50%, 37.5%, 25%, 12.5%, and 0%). So if we want a duty cycle of 92% it would not be possible using this resolution.
 
 To fix this we would want to create our count to be longer maybe we can make the resolution 32. Note that the drawback of increasing resolution is that it takes longer to complete a cycle.
 

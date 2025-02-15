@@ -4,6 +4,7 @@ description = "Esp tutorial based on Freenove"
 language = "en"
 multilingual = false
 src = "src"
+code = "code"
 title = "Esp tutorial based on Freenove"
 
 [rust]
