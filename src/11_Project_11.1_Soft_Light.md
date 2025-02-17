@@ -1,4 +1,4 @@
-# Project 10.1 Read Touch Sensor
+# Project 11.1 Soft Light
 
 In this project, we will make a soft light. We will use an ADC Module to read ADC values of a potentiometer and map it to duty cycle of the PWM used to control the brightness of a LED. Then you can change the brightness of a LED by adjusting the potentiometer.
 
